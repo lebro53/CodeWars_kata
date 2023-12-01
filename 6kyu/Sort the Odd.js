@@ -9,13 +9,9 @@
 
 function sortArray(array) {
 
-  function compareNumbers(a, b) {
-    return a - b;
-  }
-
     let oddNumbers = [];
     array.forEach((element) => element% 2 !== 0 ? oddNumbers.push(element) : element*1);
-    oddNumbers.sort(compareNumbers);
+    oddNumbers.sort((a, b) => a-b);
     let cnt = 0;
     for (let i = 0; i < array.length; i++) {
       const item = array[i];
@@ -24,7 +20,7 @@ function sortArray(array) {
         cnt++;
       }
     }
-    return oddNumbers;
+    return array;
   }
 
 
